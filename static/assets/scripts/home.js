@@ -30,7 +30,9 @@ if (!inFrame && !navigator.userAgent.includes('Firefox')) {
 
     doc.head.appendChild(link)
     doc.body.appendChild(iframe)
-    location.replace(localStorage.getItem('panicLink') || 'https://www.nasa.gov/')
+
+    const pLink = localStorage.getItem(encodeURI('pLink')) || 'https://www.nasa.gov/'
+    location.replace(pLink)
   }
 }
 
@@ -59,7 +61,7 @@ document.onkeydown = function (evt) {
 }
 
 let splashtext = [
-  'Over 5 Million Users in 2023!',
+  'Over 7 Million Users in 2023!',
   'Fastest growing proxy server!',
   'Made by Bubbo!',
   'Check out discord.gg/interstellar :)',
